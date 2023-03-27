@@ -1,1 +1,41 @@
 In this we were given a challenge , such that the flag had been encrypted using RSA and we were given two scripts , server.py and solver.py. 
+
+
+Discussion 
+-------------------
+Key generation for RSA 
+
+2 large prime numbers are chosen at random , p and q 
+
+n = p * q 
+
+Chose an integer e , such that 1<e<(p-1)*(q-1)
+
+such that e and (p-1)*(q-1) are co-prime 
+
+Now, e = 3 is fastest way to solve RSA but it is also insecure 
+
+In our challenge , e = 3
+
+Now the private key, is usually chosen as (d*e)mod{(p-1)*(q-1)} = 1
+
+Lets say , Bob wants to send a message M to Alice , 
+
+He has public key of Alice , (n and e ) 
+
+cypher message (c) = M ^ e (mod n)
+
+Bob then sends c to Alice 
+
+For Alice to recover the message, 
+
+c ^ d = (m^e)^d 
+
+
+
+Now , if e is too small 
+such that M^e<=N , then 
+
+C = M^e 
+
+and the message can be determined from M = 3rd square root (C) 
