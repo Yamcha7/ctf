@@ -1,1 +1,2 @@
-Hi hello 
+small steps - solved
+perfect sync - solved 
