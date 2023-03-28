@@ -1,1 +1,25 @@
+In this we were a given an encrypted file , along with the source code of the program that was used to encrypt it. 
+The encryption done was AES.ECB
 
+By the source code, we get to understand that the message consists of uppercase letters, {,},_, and space 
+We also get that each character is getting encoded by the same key and same salt , for each time we run the program 
+The question also mentions quipqiup tool, which is more of a substitution tool. So we take the substitution process. 
+We write a program freq.py to get the frequency of the encoded characters
+
+Now a lot of the work we do from here on , is assumption . But the assumption also needs to have proper reason behind it.
+Here, we see two characters having frequency 1, we can safely assume those are { and } .
+
+We write a program to print the encoded output and replace these 2 characters with { and } respectively. 
+Now we know the flag format is <space>HTB{some text}<space>
+
+So we assume the first 3 characters before { is H,T and B and the character at the end of } is <space>
+
+So we add these new assumptions to the program, 
+
+We get words like TH<encoded character> , which can assume as THE or we can get TH<encoded character>T , which we get as THAT 
+In this manner, more and more letters are substituted.
+
+The last decoded output is also given 
+
+Reference 
+https://medium.com/p/c929c232aa19/edit
