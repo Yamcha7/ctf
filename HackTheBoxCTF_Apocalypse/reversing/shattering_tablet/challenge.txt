@@ -1,1 +1,22 @@
+In this challenge, we were told of a tablet that had been broken into several pieces and we need to join them back together to get the flag
+We had been given the file tablet 
+We first analyzed the file using radare
+Radare gives us the option to view the code execution in a flow design format , which makes understanding the program flow little bit more easier
 
+In this screenshot, we see a lot of if else blocks and the line cmp al, 0x5f is telling that characters are getting compared on basis of which if else is executed 
+
+Now, I took a manual approach , I noted down every variable and their hex counterpart 
+For ex, 
+var-36h = 0x5f = _
+var s = 0x48 = H
+var 2ch = 0x65 = e
+
+After the whole decryption , I got a string like this 
+pTkd4e_Hr3_Br{br23vp13nb4n,3OttOr}r_3_
+
+This told me i was close to the flag, but the tablet was still shattered 
+I thought of using anagram solver but none could help .
+Then radare gave me a pattern
+
+In this order, i started setting the values from the variable (u really should try an automated approach)
+and I got the flag !!!!!!!!!!!
