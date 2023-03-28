@@ -1,0 +1,11 @@
+In this challenge, we have been given a source code
+and an output.txt
+
+We need to decrypt the output.txt 
+So from the source code, we understand the FLAG or Message has been first encoded with base64 and then converted to hex 
+We just need to reverse the whole process . 
+One approach can be is to find tools online to decode the message from hex and then to base64 
+However , I have used a program
+
+This program was initially having some issues because of 0x at the start so we created output2 with the 0x removed . 
+and when we execute the program we get the flag
